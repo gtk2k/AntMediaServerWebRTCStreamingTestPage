@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .vid-container{
+            display: inline-block;
+            margin: 4px;
+            padding: 4px;
+            border-radius:  4px;
+            border: 1px solid;
+        }
+        video {
+            width: 320px;
+            height: 240px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>SignalingUrl:</span>
+        <input type="text" id="txtSignalingUrl">
+        <button id="btnVP8">start VP8 streaming</button>
+        <button id="btnH264">start H264 streaming</button>
+        <button id="btnClose">close</button>
+    </div>
+    <div>
+        Streaming codec:<span id="streamingCodec"></span>
+    </div>
+    <div>
+        videoSize: <span id="videoSize"></span> bitRate:<span id="bitRate"></span> 
+    </div>
+    <div>
+        <div class="vid-container">
+            <div>Publisher</div>
+            <video id="vidSender" src="sintel.mp4" loop autoplay muted></video>
+        </div>
+        <div class="vid-container">
+            <div>Player</div>
+            <video id="vidReceiver" muted autoplay></video>
+        </div>
+    </div>
+    <script src="sender_receiver.js"></script>
+</body>
+
+</html>
